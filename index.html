@@ -1,42 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Duda, will you be my Valentine?</title>
+
   <style>
     body {
       text-align: center;
-      margin-top: 100px;
+      margin-top: 60px;
       font-family: Arial, sans-serif;
+      background-color: #ffffff;
     }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
     button {
       font-size: 20px;
       padding: 10px 20px;
       margin: 20px;
       cursor: pointer;
     }
+
     #no {
       position: absolute;
     }
   </style>
 </head>
+
 <body>
 
   <h1>Duda, will you be my Valentine? 💘</h1>
-  
-<img src="valn.avif"
-     style="width:80%; max-width:600px; margin:20px auto; display:block; border-radius:20px;">
 
+  <img src="valn.avif"
+       alt="Valentine image"
+       style="
+         width:80%;
+         max-width:600px;
+         margin:20px auto;
+         display:block;
+         border-radius:20px;
+         box-shadow:0 12px 30px rgba(0,0,0,0.18);
+       ">
 
-<button onclick="alert('Happy Love Day, my love.\n\nI learned what love truly means because of you.\n\nI hope I can always make you feel safe being yourself, loved, and happy — and that we keep having fun together, no matter what.\n\nI love you 💖')">
-  YES 💕
-</button>
+  <button onclick="alert(
+    'Happy Love Day, my love.\n\n' +
+    'I learned what love truly means because of you.\n\n' +
+    'I hope I can always make you feel safe being yourself, loved, and happy — and that we keep having fun together, no matter what.\n\n' +
+    'I love you 💖'
+  )">
+    YES 💕
+  </button>
 
+  <button id="no">NO 😳</button>
 
   <script>
     const noBtn = document.getElementById("no");
+
     noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 100);
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 120);
       noBtn.style.left = x + "px";
       noBtn.style.top = y + "px";
     });
@@ -44,3 +68,4 @@
 
 </body>
 </html>
+
