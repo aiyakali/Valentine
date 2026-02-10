@@ -18,25 +18,31 @@
       margin-bottom: 20px;
     }
 
+    /* Button container keeps YES + NO together */
+    .buttons {
+      display: inline-block;
+      position: relative;
+      margin-top: 20px;
+    }
+
     button {
       font-size: 20px;
       padding: 10px 22px;
-      margin: 20px;
+      margin: 10px;
       cursor: pointer;
     }
 
-    /* YES button stays normal */
+    /* YES stays normal */
     #yes {
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
-    /* NO button starts visible */
+    /* NO starts next to YES */
     #no {
       position: absolute;
-      left: 50%;
-      top: 75%;
-      transform: translate(-50%, -50%);
+      left: 120px; /* places it next to YES */
+      top: 0;
     }
   </style>
 </head>
@@ -51,5 +57,43 @@
          width:80%;
          max-width:600px;
          margin:20px auto;
+         display:block;
+         border-radius:20px;
+         box-shadow:0 12px 30px rgba(0,0,0,0.18);
+       ">
+
+  <div class="buttons">
+    <button id="yes" onclick="alert(
+      'Happy Love Day, my love.\n\n' +
+      'I learned what love truly means because of you.\n\n' +
+      'I hope I can always make you feel safe being yourself, loved, and happy — and that we keep having fun together, no matter what.\n\n' +
+      'I love you 💖'
+    )">
+      YES 💕
+    </button>
+
+    <button id="no">NO 😳</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    function moveNoButton() {
+      const padding = 20;
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - padding);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - padding);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    // Desktop
+    noBtn.addEventListener("mouseover", moveNoButton);
+    // Mobile
+    noBtn.addEventListener("touchstart", moveNoButton);
+  </script>
+
+</body>
+</html>
+
 
 
